@@ -7,9 +7,9 @@ on:
   workflow_dispatch: {}
 
 env:
-  remote_repository: "Azure/bicep-lz-vending"
+  remote_repository: "Azure/ALZ-Bicep"
   branch_name: "pull-latest-upstream-release"
-  pr_title: "New Upstream ${{ env.remote_repository }} GitHub Release Available"
+  pr_title: "New Upstream GitHub Release Available"
   pr_body: "This is an automated 'pull_request' containing the latest release from the upstream repo.\nPlease review the 'files changed' tab to review changes."
   sync_all_releases: false
 
