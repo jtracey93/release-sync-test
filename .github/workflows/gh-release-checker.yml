@@ -51,7 +51,7 @@ jobs:
         shell: pwsh
         run: |
           $keepThese = @("version.json", "src", "main.bicep", "main.bicep.parameters.md", "README.md")
-          ${{ github.repository }}/.github/scripts/Invoke-GitHubReleaseFetcher.ps1 -githubRepoUrl "https://github.com/${{ env.remote_repository }}" -directoryAndFilesToKeep $keepThese -syncAllReleases:$false
+          .github/scripts/Invoke-GitHubReleaseFetcher.ps1 -githubRepoUrl "https://github.com/${{ env.remote_repository }}" -directoryAndFilesToKeep $keepThese -syncAllReleases:$false
         working-directory: ${{ github.repository }}
 
       - name: Check for changes
