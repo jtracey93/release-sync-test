@@ -47,7 +47,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.github_token }}
 
-      - name: Update Policy Library
+      - name: Check for upstream release and pull if available
         shell: pwsh
         run: |
           $keepThese = @("version.json", "src", "main.bicep", "main.bicep.parameters.md", "README.md")
