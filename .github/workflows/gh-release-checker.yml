@@ -87,8 +87,7 @@ jobs:
             --title "${{ env.pr_title }}" \
             --body "${{ env.pr_body }}" \
             --base "${{ github.ref }}" \
-            --head "${{ env.branch_name }}" \
-            --draft)
+            --head "${{ env.branch_name }}")
             echo "Created new PR: $CHECK_PULL_REQUEST_URL"
           else
             echo "Existing PR found: $CHECK_PULL_REQUEST_URL"
