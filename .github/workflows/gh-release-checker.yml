@@ -50,7 +50,7 @@ jobs:
       - name: Check for upstream release and pull if available
         shell: pwsh
         run: |
-          $keepThese = @("version.json")
+          $keepThese = @("version.json", "infra-as-code")
           .github/scripts/Invoke-GitHubReleaseFetcher.ps1 -githubRepoUrl "https://github.com/${{ env.remote_repository }}" -directoryAndFilesToKeep $keepThese -syncAllReleases:$false
         working-directory: ${{ github.repository }}
 
