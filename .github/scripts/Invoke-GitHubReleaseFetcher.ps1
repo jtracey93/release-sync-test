@@ -124,9 +124,11 @@ if ($syncAllReleases -eq $true) {
         }
       }
 
-      Write-Host ""
-      Write-Host "===> Moving all extracted contents into $releaseDirectory." -ForegroundColor Cyan
-      Move-Item -Path "$($extractedSubFolder.FullName)/*" -Destination "$releaseDirectory" -ErrorAction SilentlyContinue
+      if ($null -eq $directoryAndFilesToKeep) {
+        Write-Host ""
+        Write-Host "===> Moving all extracted contents into $releaseDirectory." -ForegroundColor Cyan
+        Move-Item -Path "$($extractedSubFolder.FullName)/*" -Destination "$releaseDirectory" -ErrorAction SilentlyContinue
+      }
 
       Remove-Item -Path "$releaseDirectory/tmp" -Force -Recurse
 
@@ -174,9 +176,11 @@ if ($syncAllReleases -eq $false) {
       }
     }
 
-    Write-Host ""
-    Write-Host "===> Moving all extracted contents into $releaseDirectory." -ForegroundColor Cyan
-    Move-Item -Path "$($extractedSubFolder.FullName)/*" -Destination "$releaseDirectory" -ErrorAction SilentlyContinue
+    if ($null -eq $directoryAndFilesToKeep) {
+      Write-Host ""
+      Write-Host "===> Moving all extracted contents into $releaseDirectory." -ForegroundColor Cyan
+      Move-Item -Path "$($extractedSubFolder.FullName)/*" -Destination "$releaseDirectory" -ErrorAction SilentlyContinue
+    }
 
     Remove-Item -Path "$releaseDirectory/tmp" -Force -Recurse
 
